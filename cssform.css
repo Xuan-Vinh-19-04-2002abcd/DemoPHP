@@ -1,0 +1,23 @@
+.form-tt{
+    max-width: 100%;
+}
+ p{
+  font-family:'Times New Roman', Times, serif ;
+  font-size: large;
+  color: brown;
+ }
+ input,select,textarea{
+     outline: 0;
+     border: 0;
+ }
+ input{
+    border-bottom:2px solid black ;
+ }
+ #add{
+     border: 2px solid burlywood;
+     width: 150px;
+     height: 40px;
+     cursor: pointer;
+}
+
+ 
