@@ -43,25 +43,30 @@ if(isset($_GET['id'])){
 ?>
 <?php
 $sql = "Select* FROM products where id = $id";
-$result = mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($result);
+$results = $conn->query($sql);
+while ($row = $results->fetch_assoc()) { ?>
+    <?php $img = "./img/".$row['image_product']; ?>
+    <form method="GET" action="cart.php">
+        <div class="container">
+        <img src="<?php echo $img ?>" alt="">
+            <div class="detail">
+                <h1><?php echo $row['name_product'] ?></h1>
+                <p id ="price"> Giá sản phẩm <?php echo $row['price_product'] ?> <small>đ</small></p>
+                <br>
+                <br>
+                <h1>Số lượng của sản phẩm</h1>
+                <input type = "hidden" name ="action" value="add">
+                <input type="number" min = 1 max = 10 name = "quanlity">
+                <input type="hidden" name = "id" value="<?php echo $row['id']?>">
+                <br>
+                <br>
+                <button type="submit">Mua</button>
+                <p>Giao hàng thành công</p>
+                <p>Thanh toán khi nhận hàng</p>
+                <p>Đổi hàng trong 15 ngày</p>
+             </div>
+        </div>
+    </form>
+   <?php }
 
-$img = "./img/".$row['image_product'];
-echo'
-<div class="container">
-<img src="'.$img.'" alt="">
-<div class="detail">
-    <h1>'.$row['name_product'].'</h1>
-    <p id ="price"> Giá sản phẩm '.$row['price_product'].' <small>đ</small></p>
-    <lable>Số lượng</lable>
-    <input type="number" min = 1 max =10>
-    <br>
-    <br>
-    <input type="submit" value="Đặt mua">
-
-    <p>Giao hàng thành công</p>
-    <p>Thanh toán khi nhận hàng</p>
-    <p>Đổi hàng trong 15 ngày</p>
-</div>
-</div>';
 ?> 

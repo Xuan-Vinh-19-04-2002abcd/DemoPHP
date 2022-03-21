@@ -18,6 +18,9 @@
         img{
             max-width: 100%;
         }
+        .card-body{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -45,7 +48,7 @@
                     </li>
                     <li>
                         <a href="">Liên hệ</a>
-                    </li>
+                    </li>   
                 </ul>
             </nav>
         </div>
@@ -72,7 +75,7 @@
                 $results = $conn->query($sql);
                 while ($row = $results->fetch_assoc()) { ?>
                  <?php $img = "./img/".$row['image_product']; ?>
-                <div class="col-lg-4 col-md-4 card ">
+                <div class="col-lg-4 col-md-4  card ">
                     <img src="<?php echo $img ?>" class="card-img-top"
                         style="width: 100%;height: 400px;object-fit: cover;">
                     <div class="card-body">

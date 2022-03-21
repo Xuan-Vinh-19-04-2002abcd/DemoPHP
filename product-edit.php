@@ -35,7 +35,7 @@ $img = "./img/".$row['image_product'];
                 if($result == true){
                     while ($roww = mysqli_fetch_assoc($result)){
                         ?>
-                        <option value="<?php echo $row['id']?>">
+                        <option value="<?php echo $roww['id']?>">
                         <?php echo $roww['tendanhmuc'] ?>
                         </option>
                         <?php
