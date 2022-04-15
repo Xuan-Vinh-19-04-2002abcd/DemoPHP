@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 16, 2022 lúc 07:15 AM
+-- Thời gian đã tạo: Th3 25, 2022 lúc 04:56 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 7.3.28
 
@@ -44,6 +44,27 @@ INSERT INTO `danhmucthoitrang` (`id`, `tendanhmuc`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `lienhe`
+--
+
+CREATE TABLE `lienhe` (
+  `id` int(255) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  `content` varchar(500) NOT NULL,
+  `Description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `lienhe`
+--
+
+INSERT INTO `lienhe` (`id`, `name`, `email`, `content`, `Description`) VALUES
+(1, 'Đặng xuân VInh', 'vinh.dang23@studemt.passerellesnumeriques.org', 'OK Vinh là nhất', 'Một hôm, Quan Vũ, Trương Phi cùng đi chơi vắng, Huyền Đức đang lom khom tưới rau, bỗng thấy Hứa Chử và Trương Liêu dẫn vài chục người vào vườn, nói rằng:');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `products`
 --
 
@@ -62,18 +83,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name_product`, `type_product`, `image_product`, `price_product`, `quanlity_product`, `discount_product`) VALUES
-(15, 'Music', '15', '81_u1jyFKSL.jpg', 450000, 18, 1),
-(16, 'Sách giáo khoa ', '2', 'truong-an-ly-ca-1-mau-do-hoa-dao.jpg', 15000, 5, 20),
 (17, 'Sách thiếu nhi ', '3', 'viet-nam-danh-tac-song-mon.jpg', 500000, 50, 25),
 (18, 'Sách hay ', '2', 'viet-nam-danh-tac-to-tam.jpg', 500000, 50, 12),
 (19, 'Văn hay chữ tốt', '1', '81yj5--FGQL.jpg', 15555, 8, 12),
 (20, 'Sách nước ngoài', '1', '91qnd1RegIL.jpg', 500000, 15, 20),
 (21, 'Sách Mỹ', '1', 'sach-di-tim-le-song-ebook-206x300.jpg', 15000, 12, 20),
 (22, 'Sách hạnh phúc', '1', 'cau-be-mac-vay.jpg', 12000, 1123, 12),
-(23, 'Sách Nga', '1', 'viet-nam-danh-tac-tieu-son-trang-si.jpg', 15000, 5, 120000),
 (24, 'Sách Ytalia', '2', 'truong-an-ly-ca-1-mau-do-hoa-dao.jpg', 20000, 45, 1220),
 (25, 'Sách Ả rập', '3', '81_u1jyFKSL.jpg', 1500000, 10, 20),
-(26, 'Sách nô lệ', '3', '81ypIx8HzgL.jpg', 20000, 15, 5);
+(26, 'Sách nô tì', '3', 'viet-nam-danh-tac-song-mon.jpg', 15000, 15, 5),
+(27, 'ỵdsfg', '1', '81yj5--FGQL.jpg', 12, 12, 13);
 
 -- --------------------------------------------------------
 
@@ -107,6 +126,12 @@ ALTER TABLE `danhmucthoitrang`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `lienhe`
+--
+ALTER TABLE `lienhe`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
@@ -129,10 +154,16 @@ ALTER TABLE `danhmucthoitrang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT cho bảng `lienhe`
+--
+ALTER TABLE `lienhe`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `sildes`

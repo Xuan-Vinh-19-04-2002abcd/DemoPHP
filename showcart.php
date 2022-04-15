@@ -71,4 +71,5 @@ button:hover{
             <td><?php echo  $Total?></td>
         </tr>
     </table>
+    <a href="./index.php">Quay lại trang chủ</a>
 </div>

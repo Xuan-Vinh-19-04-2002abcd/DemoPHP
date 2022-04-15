@@ -10,6 +10,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        table, th, td{
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+table{
+    border-collapse:collapse;
+}
+td{
+    width: 200px;
+}
+#quanlity{
+    max-width: 100px;
+    outline: 0;
+    border: 2px solid black;
+}
+button:hover{
+    background-color: red;
+}
+#delete{
+    margin-top: 10px;
+}
+th{
+    background-color: orchid;
+}
+    </style>
 </head>
 <body>
     <table border="1">

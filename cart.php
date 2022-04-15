@@ -10,7 +10,9 @@ if(isset($_GET['quanlity'])){
 if(isset($_GET['action'])){
     $action = $_GET['action'] ;
 }
-
+if(isset($_GET['action'])){
+    $action = $_GET['action'] ;
+}
 $sql = "select * from products where id = $id;";
 $results = $conn->query($sql);
 $product =mysqli_fetch_assoc($results);
@@ -21,6 +23,14 @@ $item = [
     "price" => $product['price_product'],
     "quanlity" => $quanlity
 ];
+if($action == 'addto'){
+    if(isset($_SESSION['cart'][$id])){
+        $_SESSION['cart'][$id]['quanlity'] += $quanlity;
+    }
+    else{
+        $_SESSION['cart'][$id] = $item;
+    }
+}
 if($action == 'add'){
     if(isset($_SESSION['cart'][$id])){
         $_SESSION['cart'][$id]['quanlity'] += $quanlity;
@@ -29,6 +39,7 @@ if($action == 'add'){
         $_SESSION['cart'][$id] = $item;
     }
 }
+
 if($action == 'update'){
     if(isset($_SESSION['cart'][$id])){
         $_SESSION['cart'][$id]['quanlity'] = $quanlity;
@@ -37,6 +48,6 @@ if($action == 'update'){
 if($action == 'delete'){
     unset($_SESSION['cart'][$id]);
 }
-header("Location: http://localhost:3000/showcart.php ")
+header("Location: ./showcart.php ")
 
 ?>

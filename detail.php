@@ -41,6 +41,7 @@ if(isset($_GET['id'])){
 
 }
 ?>
+<a href="./index.php">Quay lại trang chủ</a>
 <?php
 $sql = "Select* FROM products where id = $id";
 $results = $conn->query($sql);

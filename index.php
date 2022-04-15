@@ -21,6 +21,9 @@
         .card-body{
             text-align: center;
         }
+        button{
+            display: inline;
+        }
     </style>
 </head>
 <body>
@@ -81,10 +84,19 @@
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row["name_product"] ?></h5>
                         <p class="card-text text-danger"><?php echo $row["price_product"] ?> VND</p>
-                        <a href="./detail.php?id=<?php echo $row['id']?>" class="btn btn-success">Mua hang</a>
+                        <span>
+                        <form method="GET" action="cart.php">
+                            <input type = "hidden" name ="action" value="addto">
+                            <input type="hidden" value="1" name = "quanlity">
+                            <input type="hidden" name = "id" value="<?php echo $row['id']?>">
+                            <button type="submit" class="btn btn-success">Mua hàng</button>
+                        </form>
+                        </span>
+                        <br>
                         <a href="./detail.php?id=<?php echo $row['id']?>" class="btn btn-success">Chi tiet</a>
                     </div>
                 </div>
+
 
                 <?php }
                 ?>
@@ -104,7 +116,15 @@
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row["name_product"] ?></h5>
                         <p class="card-text text-danger"><?php echo $row["price_product"] ?> VND</p>
-                        <a href="./detail.php?id=<?php echo $row['id']?>" class="btn btn-success">Mua hang</a>
+                        <span>
+                        <form method="GET" action="cart.php">
+                            <input type = "hidden" name ="action" value="addto">
+                            <input type="hidden" value="1" name = "quanlity">
+                            <input type="hidden" name = "id" value="<?php echo $row['id']?>">
+                            <button type="submit" class="btn btn-success">Mua hàng</button>
+                        </form>
+                        </span>
+                        <br>
                         <a href="./detail.php?id=<?php echo $row['id']?>" class="btn btn-success">Chi tiet</a>
                     </div>
                 </div>
@@ -127,7 +147,15 @@
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row["name_product"] ?></h5>
                         <p class="card-text text-danger"><?php echo $row["price_product"] ?> VND</p>
-                        <a href="./detail.php?id=<?php echo $row['id']?>" class="btn btn-success">Mua hang</a>
+                        <span>
+                        <form method="GET" action="cart.php">
+                            <input type = "hidden" name ="action" value="addto">
+                            <input type="hidden" value="1" name = "quanlity">
+                            <input type="hidden" name = "id" value="<?php echo $row['id']?>">
+                            <button type="submit" class="btn btn-success">Mua hàng</button>
+                        </form>
+                        </span>
+                        <br>
                         <a href="./detail.php?id=<?php echo $row['id']?>" class="btn btn-success">Chi tiet</a>
                     </div>
                 </div>
